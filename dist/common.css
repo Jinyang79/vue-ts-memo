@@ -1,0 +1,339 @@
+[v-cloak] {
+    display: none;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  body {
+    padding-top: 50px;
+    background: url(./imgs/pixels.png);
+  }
+  
+  blockquote p {
+    font-size: 14px;
+  }
+  
+  .dropdown-menu a {
+    cursor: pointer !important;
+  }
+  
+  #vue-memo {
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 0 4px 0 #e1e1e1;
+    padding: 0;
+    z-index: 1;
+  }
+  
+  .navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+    z-index: 1;
+    cursor: default;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  .navbar .navbar-right a {
+    cursor: pointer;
+  }
+  
+  .navbar .navbar-right .search-box {
+    width: calc(100% - 24px);
+    min-width: 180px;
+    margin: 6px 12px;
+  }
+  
+  .navbar .dropdown-toggle {
+    position: relative;
+    padding-right: 45px !important;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .navbar .dropdown-toggle:hover {
+    background: #e7e7e7 !important;
+  }
+  
+  .navbar .dropdown-toggle:after {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 8px;
+    right: 18px;
+    background: url(./imgs/icons/icon-dropdown.png) 0 0 no-repeat;
+    content: " ";
+    opacity: 0.6;
+  }
+  
+  @media (min-width: 768px) {
+    .navbar .dropdown-toggle:after {
+      top: 13px;
+    }
+  }
+  
+  .navbar .count {
+    border-radius: 5px;
+    float: right;
+    margin-top: 3px;
+  }
+  
+  .navbar-brand{
+    padding-top:5px;
+  }
+  
+  .navbar .current-category .count {
+    float: none;
+    margin: -2px 6px 0 9px;
+  }
+  
+  #memos {
+    min-height: 800px;
+    margin-top: 6px;
+    padding: 0;
+  }
+  
+  .memo-container {
+    padding: 6px;
+    float: left;
+  }
+  
+  .memo {
+    position: relative;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    padding: 9px;
+    background-color: #fff;
+    transition: all 0.15s ease-in-out;
+  }
+  
+  .memo:hover {
+    box-shadow: 0 0 6px 0 #757575;
+  }
+  
+  .memo:hover .mark {
+    display: block;
+  }
+  
+  .memo[data-completed="true"] {
+    border-color: #4dabf5;
+  }
+  
+  .memo[data-completed="true"] .mark {
+    display: block;
+  }
+  
+  .memo .mark {
+    display: none;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: -8px;
+    left: -8px;
+    border-radius: 50%;
+    background:#0094ff  no-repeat 3px 3px; /*  url(./imgs/icons/icon-done.svg) */
+    background-size: 18px 18px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .memo .mark:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  
+  .memo .memo-heading {
+    position: relative;
+    width: 100%;
+  }
+  
+  .memo .memo-heading .tools {
+    float: right;
+    margin-top: 6px;
+  }
+  
+  .memo .memo-heading .tools > li {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-left: 10px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .memo .memo-heading .tools > li:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+  
+  .memo .memo-heading .tools > li.edit {
+    background: url(./imgs/icons/icon-edit.png) no-repeat 0 0;
+  }
+  
+  .memo .memo-heading .tools > li.delete {
+    background: url(./imgs/icons/icon-delete.png) no-repeat 0 0;
+  }
+  
+  .memo .memo-heading .title {
+    display: inline-block;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #bdbdbd;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: calc(100% - 60px);
+  }
+  
+  .memo .memo-info {
+    margin: 0 auto 12px;
+    color: #757575;
+    font-weight: 300;
+  }
+  
+  .memo .memo-info .category {
+    float: right;
+  }
+  
+  .memo .content {
+    border: 1px solid #f8f8f8;
+    bottom: 12px;
+    overflow-y: auto;
+    text-overflow: ellipsis;
+    height: 180px;
+  }
+  
+  .memo .content[data-type="doodle"] {
+    overflow: hidden;
+  }
+  
+  .cover-layer,
+  .memo .content img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .cover-layer {
+    top: 0;
+    left: 0;
+    background-color: #222;
+    opacity: 0.5;
+    z-index: 2;
+  }
+  
+  .cover-layer,
+  .editor-layer {
+    display: block;
+    position: absolute;
+  }
+  
+  .editor-layer {
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -242px;
+    padding: 10px;
+    border: 1px solid #f8f8f8;
+    border-radius: 3px;
+    box-shadow: 0 0 6px 0 #f8f8f8;
+    z-index: 3;
+  }
+  
+  .editor-layer .editor-top {
+    position: relative;
+    margin-bottom: 10px;
+    width: 500px;
+  }
+  
+  .editor-layer .editor-top .tools {
+    position: absolute;
+    top: 6px;
+    right: 0;
+  }
+  
+  .editor-layer .editor-top .tools > li {
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin-left: 10px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .editor-layer .editor-top .tools > li:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+  
+  .editor-layer .editor-top .tools > li.save {
+    background: url(./imgs/icons/icon-save.png) no-repeat 0 0;
+  }
+  
+  .editor-layer .editor-top .tools > li.cancel {
+    background: url(./imgs/icons/icon-cancel.png) no-repeat 0 0;
+  }
+  
+  .editor-layer .editor-top .editor-title {
+    width: calc(100% - 140px);
+  }
+  
+  html #edit-doodle .editor-title,
+  html #edit-markdown .editor-title {
+    width: calc(100% - 60px);
+  }
+  
+  .editor-layer .editor-top .select-category {
+    position: absolute;
+    right: 62px;
+    top: 0;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .editor-layer .editor-top .select-category .dropdown-menu {
+    min-width: 0;
+  }
+  
+  .editor-layer .text-content {
+    width: 100%;
+    height: 350px;
+    font-size: 12px;
+    resize: none;
+  }
+  
+  @media (max-width: 768px) {
+    #memos {
+      padding: 0 5px;
+    }
+  
+    .memo-container {
+      padding: 2px;
+      margin-top: 0;
+      width: 50%;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 992px) {
+    .memo-container {
+      width: 33.3%;
+    }
+  }
+  
+  @media (min-width: 992px) and (max-width: 1200px) {
+    .memo-container {
+      width: 25%;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .memo-container {
+      width: 25%;
+    }
+  }
