@@ -32,7 +32,7 @@ export default class MemoItem extends Vue {
 
   // 删除方法
   doDel(): void {
-    if (!window.confirm(`确认要删除<${this.memo.title}>的笔记吗？`)) return;
+    if (!confirm(`确认要删除<${this.memo.title}>的笔记吗？`)) return;
     this.$store.state.aHelper.remove(this.memo.id);
   }
   showEdit(): void {

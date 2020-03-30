@@ -238,8 +238,7 @@
     background-color: #fff;
     top: 50%;
     left: 50%;
-    margin-left: -250px;
-    margin-top: -242px;
+    transform: translate(-50%,-50%);
     padding: 10px;
     border: 1px solid #f8f8f8;
     border-radius: 3px;
@@ -247,10 +246,14 @@
     z-index: 3;
   }
   
-  .editor-layer .editor-top {
-    position: relative;
+  .editor-layer{
     margin-bottom: 10px;
     width: 500px;
+  }
+  .editor-top{
+    position: relative;
+    margin-bottom: 10px;
+    width: 100%;
   }
   
   .editor-layer .editor-top .tools {
@@ -317,7 +320,13 @@
       padding: 2px;
       margin-top: 0;
       width: 50%;
+    }   
+    .editor-layer{
+      width: 300px;
+      transform: translate(-50%,-50%);
     }
+
+    
   }
   
   @media (min-width: 768px) and (max-width: 992px) {
